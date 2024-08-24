@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Enhanced Search Engine</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="search-container">
+        <h1>My Enhanced Search Engine</h1>
+
+        <!-- Search Method Selection -->
+        <div class="search-method">
+            <label>
+                <input type="radio" name="searchType" value="google" checked> Google Custom Search
+            </label>
+            <label>
+                <input type="radio" name="searchType" value="custom"> Custom Search
+            </label>
+        </div>
+
+        <!-- Google Custom Search Engine Integration -->
+        <div id="googleCSE">
+            <script async src="https://cse.google.com/cse.js?cx=612580439ae374a68"></script>
+            <div class="gcse-search"></div>
+        </div>
+
+        <!-- Custom Search Box -->
+        <div id="customSearch" style="display: none;">
+            <div class="search-box">
+                <input type="text" id="searchBox" placeholder="Search..." autocomplete="off">
+                <button onclick="performSearch()">
+                    <img src="search-icon.png" alt="Search">
+                </button>
+                <div id="suggestionsBox" class="suggestions"></div>
+            </div>
+
+            <!-- Advanced Options -->
+            <div class="advanced-options">
+                <label>
+                    <input type="checkbox" id="imageSearch"> Images
+                </label>
+                <label>
+                    <input type="checkbox" id="newsSearch"> News
+                </label>
+            </div>
+
+            <!-- Loading Spinner -->
+            <div id="loading" class="spinner" style="display: none;"></div>
+
+            <!-- Search Results -->
+            <ul id="results"></ul>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
